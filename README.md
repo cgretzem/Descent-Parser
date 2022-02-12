@@ -108,7 +108,7 @@ This project's input coding langage consists of 3 main parts
     case -> CASE NUM COLON body
 
     
-**3. Semantics** - these are the rules that make sure the program makes sense, for example checkign to make sure the condition of an if statment is bool-type.
+**3. Semantics** - these are the rules that make sure the program makes sense, for example checking to make sure the condition of an if statment is bool-type.
 
     
       3.1. Types
@@ -154,4 +154,5 @@ This project's input coding langage consists of 3 main parts
         *REALNUM constants are of type real
         
         *true and false values are of type bool
-
+**4. Output** - these is how the program is supposed to represet variables in a given input, or throw a type error if it finds one.
+       
