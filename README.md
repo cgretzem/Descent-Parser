@@ -163,5 +163,11 @@ This project's input coding langage consists of 3 main parts
              
        Type errors follow this format: 
    ```
-   **TYPE MISMATCH <line_number> <constraint>**
+   TYPE MISMATCH <line_number> <constraint>
    ```
+   
+       If there are no type errors, variables are displayed in the order they are found.
+       
+       If the variable has a type, it follows the form <variable>: <type> #
+       
+       If the variable does not have a type, it prints all variables of the same unknown type, with the form <variable_list>: ? # in the order they are found in the program.
