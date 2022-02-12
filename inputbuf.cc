@@ -1,4 +1,8 @@
-
+/*
+ * Copyright (C) Rida Bazzi, 2016
+ *
+ * Do not share this file with anyone
+ */
 #include <iostream>
 #include <istream>
 #include <vector>

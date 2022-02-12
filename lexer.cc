@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) Rida Bazzi, 2016
+ *
+ * Do not share this file with anyone
+ */
 
 #include <istream>
 #include <vector>
@@ -17,7 +22,7 @@ string reserved[] = { "END_OF_FILE",
     "MULT", "DIV", "GREATER", "LESS","LPAREN",
     "RPAREN", "NUM", "REALNUM",
     "EQUAL", "COLON", "COMMA", "SEMICOLON",
-    "LBRACE", "RBRACE", "ID", "ERROR" 
+    "LBRACE", "RBRACE", "ID", "ERROR" // TODO: Add labels for new token types here (as string)
 };
 
 #define KEYWORDS_COUNT 11
@@ -38,7 +43,7 @@ LexicalAnalyzer::LexicalAnalyzer()
     tmp.token_type = ERROR;
 }
 
-//not needed
+
 bool LexicalAnalyzer::SkipComment()
 {
     char c;
@@ -75,7 +80,6 @@ bool LexicalAnalyzer::SkipComment()
     return comment_encountered;
 }
 
-//skips all whitespace in program
 bool LexicalAnalyzer::SkipSpace()
 {
     char c;
@@ -95,7 +99,6 @@ bool LexicalAnalyzer::SkipSpace()
     }
     return space_encountered;
 }
-
 
 bool LexicalAnalyzer::IsKeyword(string s)
 {
@@ -130,8 +133,6 @@ int countCapitals(string boof)
     return count;
 }
 
-
-//scans in either an ID or a keyword from the keyword list
 Token LexicalAnalyzer::ScanIdOrKeyword()
 {
     char c;
@@ -171,7 +172,6 @@ Token LexicalAnalyzer::ScanIdOrKeyword()
     return tmp;
 }
 
-//scans in a number
 Token LexicalAnalyzer::ScanNum()
 {
     char c;
@@ -239,7 +239,9 @@ Token LexicalAnalyzer::GetToken()
 {
     char c;
 
-    
+    // if there are tokens that were previously
+    // stored due to UngetToken(), pop a token and
+    // return it without reading from input
     if (!tokens.empty()) {
         tmp = tokens.back();
         tokens.pop_back();
@@ -247,7 +249,7 @@ Token LexicalAnalyzer::GetToken()
     }
 
     SkipSpace();
-    //SkipComment(); No comments in this language
+    //SkipComment();
 
     tmp.lexeme = "";
     tmp.line_no = line_no;
@@ -348,7 +350,7 @@ int main()
     InputBuffer input;
     Parser parser;
     
-    token = lexer.GetToken(); 
+    token = lexer.GetToken(); // this block is outside while to initialize token
 
     if(token.token_type != ERROR)
     {

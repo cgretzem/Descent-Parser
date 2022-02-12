@@ -1,4 +1,8 @@
-
+/*
+ * Copyright (C) Rida Bazzi, 2016
+ *
+ * Do not share this file with anyone
+ */
 #ifndef __LEXER__H__
 #define __LEXER__H__
 
@@ -20,7 +24,6 @@ typedef enum { END_OF_FILE = 0,
     LBRACE, RBRACE, ID, ERROR 
 } TokenType;
 
-//Represents a token from inputBuf
 class Token {
   public:
     void Print();
@@ -30,7 +33,6 @@ class Token {
     int line_no;
 };
 
-//LexicalAnalyzer takes in tokens before parsing and typing starts and puts them in a vector of tokens
 class LexicalAnalyzer {
   public:
     Token GetToken();
