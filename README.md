@@ -162,4 +162,4 @@ This project's input coding langage consists of 3 main parts
              * There are no type errors in the input program
              
        Type errors follow this format: 
-   ### TYPE MISMATCH <line_number> <constraint>
+   __ TYPE MISMATCH <line_number> <constraint> __
