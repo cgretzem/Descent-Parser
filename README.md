@@ -156,3 +156,10 @@ This project's input coding langage consists of 3 main parts
         *true and false values are of type bool
 **4. Output** - these is how the program is supposed to represet variables in a given input, or throw a type error if it finds one.
        
+       
+       There are two scenarios:
+             * There is a type error in the input program
+             * There are no type errors in the input program
+             
+       Type errors follow this format: 
+       **TYPE MISMATCH <line_number> <constraint>**
